@@ -1,0 +1,9 @@
+name: lsp
+version: 0.1.0
+
+authors:
+  - Julien Elbaz <elbywan@hotmail.com>
+
+crystal: 1.6.1
+
+license: MIT
