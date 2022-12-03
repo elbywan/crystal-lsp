@@ -1,5 +1,8 @@
 # `lsp`
 
+[![ci](https://github.com/elbywan/crystal-lsp/actions/workflows/ci.yml/badge.svg)](https://github.com/elbywan/crystal-lsp/actions/workflows/ci.yml)
+[![docs](https://img.shields.io/badge/%F0%9F%93%9A-Crystal%20docs-blueviolet)](https://elbywan.github.io/crystal-lsp/)
+
 ### An implementation of the Language Server Protocol written in Crystal.
 
 This shard is a **partial** implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/).
