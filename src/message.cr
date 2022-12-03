@@ -1,4 +1,5 @@
 require "json"
+require "./ext/*"
 require "./tools"
 
 module LSP::Message

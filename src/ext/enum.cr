@@ -1,3 +1,4 @@
+# :nodoc:
 struct Enum
   # An JSON fiendly string enum.
   macro string(name, *, downcase = true, mappings = nil, &block)
@@ -52,6 +53,7 @@ struct Enum
   end
 
   # An enum that can be serialized to and from JSON baed on its intrinsic value (i.e. a number).
+  # :nodoc:
   macro number(name, *, mappings = nil, &block)
     enum {{ name.id }}
       {{ block.body }}

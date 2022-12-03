@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.5.1">
+<meta name="crystal_docs.project_version" content="main-dev">
+<meta name="crystal_docs.project_name" content="lsp">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="lsp">
+  <title>LSP::CompletionRequest - lsp main-dev</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          lsp
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main-dev
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="lsp/LSP" data-name="lsp">
+      <a href="../LSP.html">LSP</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/CancelNotification" data-name="lsp::cancelnotification">
+      <a href="../LSP/CancelNotification.html">CancelNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CancelParams" data-name="lsp::cancelparams">
+      <a href="../LSP/CancelParams.html">CancelParams</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/ClientCapabilities" data-name="lsp::clientcapabilities">
+      <a href="../LSP/ClientCapabilities.html">ClientCapabilities</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/ClientCapabilities/Window" data-name="lsp::clientcapabilities::window">
+      <a href="../LSP/ClientCapabilities/Window.html">Window</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ClientCapabilities/Workspace" data-name="lsp::clientcapabilities::workspace">
+      <a href="../LSP/ClientCapabilities/Workspace.html">Workspace</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CodeActionKind" data-name="lsp::codeactionkind">
+      <a href="../LSP/CodeActionKind.html">CodeActionKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CodeActionOptions" data-name="lsp::codeactionoptions">
+      <a href="../LSP/CodeActionOptions.html">CodeActionOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CodeLensOptions" data-name="lsp::codelensoptions">
+      <a href="../LSP/CodeLensOptions.html">CodeLensOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Command" data-name="lsp::command">
+      <a href="../LSP/Command.html">Command</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CompletionContext" data-name="lsp::completioncontext">
+      <a href="../LSP/CompletionContext.html">CompletionContext</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CompletionItem" data-name="lsp::completionitem">
+      <a href="../LSP/CompletionItem.html">CompletionItem</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CompletionItemKind" data-name="lsp::completionitemkind">
+      <a href="../LSP/CompletionItemKind.html">CompletionItemKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CompletionItemTag" data-name="lsp::completionitemtag">
+      <a href="../LSP/CompletionItemTag.html">CompletionItemTag</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CompletionList" data-name="lsp::completionlist">
+      <a href="../LSP/CompletionList.html">CompletionList</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CompletionOptions" data-name="lsp::completionoptions">
+      <a href="../LSP/CompletionOptions.html">CompletionOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CompletionParams" data-name="lsp::completionparams">
+      <a href="../LSP/CompletionParams.html">CompletionParams</a>
+      
+    </li>
+  
+  <li class=" current" data-id="lsp/LSP/CompletionRequest" data-name="lsp::completionrequest">
+      <a href="../LSP/CompletionRequest.html">CompletionRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CompletionTriggerKind" data-name="lsp::completiontriggerkind">
+      <a href="../LSP/CompletionTriggerKind.html">CompletionTriggerKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CreateFile" data-name="lsp::createfile">
+      <a href="../LSP/CreateFile.html">CreateFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/CreateFileOptions" data-name="lsp::createfileoptions">
+      <a href="../LSP/CreateFileOptions.html">CreateFileOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DeclarationOptions" data-name="lsp::declarationoptions">
+      <a href="../LSP/DeclarationOptions.html">DeclarationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DeclarationRegistrationOptions" data-name="lsp::declarationregistrationoptions">
+      <a href="../LSP/DeclarationRegistrationOptions.html">DeclarationRegistrationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DefinitionOptions" data-name="lsp::definitionoptions">
+      <a href="../LSP/DefinitionOptions.html">DefinitionOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DefinitionParams" data-name="lsp::definitionparams">
+      <a href="../LSP/DefinitionParams.html">DefinitionParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DefinitionRequest" data-name="lsp::definitionrequest">
+      <a href="../LSP/DefinitionRequest.html">DefinitionRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DeleteFile" data-name="lsp::deletefile">
+      <a href="../LSP/DeleteFile.html">DeleteFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DeleteFileOptions" data-name="lsp::deletefileoptions">
+      <a href="../LSP/DeleteFileOptions.html">DeleteFileOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Diagnostic" data-name="lsp::diagnostic">
+      <a href="../LSP/Diagnostic.html">Diagnostic</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DiagnosticRelatedInformation" data-name="lsp::diagnosticrelatedinformation">
+      <a href="../LSP/DiagnosticRelatedInformation.html">DiagnosticRelatedInformation</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DiagnosticSeverity" data-name="lsp::diagnosticseverity">
+      <a href="../LSP/DiagnosticSeverity.html">DiagnosticSeverity</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DiagnosticTag" data-name="lsp::diagnostictag">
+      <a href="../LSP/DiagnosticTag.html">DiagnosticTag</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidChangeConfigurationClientCapabilities" data-name="lsp::didchangeconfigurationclientcapabilities">
+      <a href="../LSP/DidChangeConfigurationClientCapabilities.html">DidChangeConfigurationClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidChangeNotification" data-name="lsp::didchangenotification">
+      <a href="../LSP/DidChangeNotification.html">DidChangeNotification</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/DidChangeTextDocumentParams" data-name="lsp::didchangetextdocumentparams">
+      <a href="../LSP/DidChangeTextDocumentParams.html">DidChangeTextDocumentParams</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/DidChangeTextDocumentParams/TextDocumentContentChangeEvent" data-name="lsp::didchangetextdocumentparams::textdocumentcontentchangeevent">
+      <a href="../LSP/DidChangeTextDocumentParams/TextDocumentContentChangeEvent.html">TextDocumentContentChangeEvent</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidChangeWatchedFilesClientCapabilities" data-name="lsp::didchangewatchedfilesclientcapabilities">
+      <a href="../LSP/DidChangeWatchedFilesClientCapabilities.html">DidChangeWatchedFilesClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidCloseNotification" data-name="lsp::didclosenotification">
+      <a href="../LSP/DidCloseNotification.html">DidCloseNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidCloseTextDocumentParams" data-name="lsp::didclosetextdocumentparams">
+      <a href="../LSP/DidCloseTextDocumentParams.html">DidCloseTextDocumentParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidOpenNotification" data-name="lsp::didopennotification">
+      <a href="../LSP/DidOpenNotification.html">DidOpenNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidOpenTextDocumentParams" data-name="lsp::didopentextdocumentparams">
+      <a href="../LSP/DidOpenTextDocumentParams.html">DidOpenTextDocumentParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidSaveNotification" data-name="lsp::didsavenotification">
+      <a href="../LSP/DidSaveNotification.html">DidSaveNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DidSaveTextDocumentParams" data-name="lsp::didsavetextdocumentparams">
+      <a href="../LSP/DidSaveTextDocumentParams.html">DidSaveTextDocumentParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentColorOptions" data-name="lsp::documentcoloroptions">
+      <a href="../LSP/DocumentColorOptions.html">DocumentColorOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentColorRegistrationOptions" data-name="lsp::documentcolorregistrationoptions">
+      <a href="../LSP/DocumentColorRegistrationOptions.html">DocumentColorRegistrationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentFilter" data-name="lsp::documentfilter">
+      <a href="../LSP/DocumentFilter.html">DocumentFilter</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentFormattingOptions" data-name="lsp::documentformattingoptions">
+      <a href="../LSP/DocumentFormattingOptions.html">DocumentFormattingOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentFormattingParams" data-name="lsp::documentformattingparams">
+      <a href="../LSP/DocumentFormattingParams.html">DocumentFormattingParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentFormattingRequest" data-name="lsp::documentformattingrequest">
+      <a href="../LSP/DocumentFormattingRequest.html">DocumentFormattingRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentHighlightOptions" data-name="lsp::documenthighlightoptions">
+      <a href="../LSP/DocumentHighlightOptions.html">DocumentHighlightOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentLinkOptions" data-name="lsp::documentlinkoptions">
+      <a href="../LSP/DocumentLinkOptions.html">DocumentLinkOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentOnTypeFormattingOptions" data-name="lsp::documentontypeformattingoptions">
+      <a href="../LSP/DocumentOnTypeFormattingOptions.html">DocumentOnTypeFormattingOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentRangeFormattingOptions" data-name="lsp::documentrangeformattingoptions">
+      <a href="../LSP/DocumentRangeFormattingOptions.html">DocumentRangeFormattingOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentRangeFormattingParams" data-name="lsp::documentrangeformattingparams">
+      <a href="../LSP/DocumentRangeFormattingParams.html">DocumentRangeFormattingParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentRangeFormattingRequest" data-name="lsp::documentrangeformattingrequest">
+      <a href="../LSP/DocumentRangeFormattingRequest.html">DocumentRangeFormattingRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentSelector" data-name="lsp::documentselector">
+      <a href="../LSP/DocumentSelector.html">DocumentSelector</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentSymbol" data-name="lsp::documentsymbol">
+      <a href="../LSP/DocumentSymbol.html">DocumentSymbol</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentSymbolOptions" data-name="lsp::documentsymboloptions">
+      <a href="../LSP/DocumentSymbolOptions.html">DocumentSymbolOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentSymbolParams" data-name="lsp::documentsymbolparams">
+      <a href="../LSP/DocumentSymbolParams.html">DocumentSymbolParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/DocumentSymbolsRequest" data-name="lsp::documentsymbolsrequest">
+      <a href="../LSP/DocumentSymbolsRequest.html">DocumentSymbolsRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ErrorCodes" data-name="lsp::errorcodes">
+      <a href="../LSP/ErrorCodes.html">ErrorCodes</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Exception" data-name="lsp::exception">
+      <a href="../LSP/Exception.html">Exception</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ExecuteCommandClientCapabilities" data-name="lsp::executecommandclientcapabilities">
+      <a href="../LSP/ExecuteCommandClientCapabilities.html">ExecuteCommandClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ExecuteCommandOptions" data-name="lsp::executecommandoptions">
+      <a href="../LSP/ExecuteCommandOptions.html">ExecuteCommandOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ExitNotification" data-name="lsp::exitnotification">
+      <a href="../LSP/ExitNotification.html">ExitNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/FailureHandlingKind" data-name="lsp::failurehandlingkind">
+      <a href="../LSP/FailureHandlingKind.html">FailureHandlingKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/FoldingRangeOptions" data-name="lsp::foldingrangeoptions">
+      <a href="../LSP/FoldingRangeOptions.html">FoldingRangeOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/FoldingRangeRegistrationOptions" data-name="lsp::foldingrangeregistrationoptions">
+      <a href="../LSP/FoldingRangeRegistrationOptions.html">FoldingRangeRegistrationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/FormattingOptions" data-name="lsp::formattingoptions">
+      <a href="../LSP/FormattingOptions.html">FormattingOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Hover" data-name="lsp::hover">
+      <a href="../LSP/Hover.html">Hover</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/HoverOptions" data-name="lsp::hoveroptions">
+      <a href="../LSP/HoverOptions.html">HoverOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/HoverParams" data-name="lsp::hoverparams">
+      <a href="../LSP/HoverParams.html">HoverParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/HoverRequest" data-name="lsp::hoverrequest">
+      <a href="../LSP/HoverRequest.html">HoverRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ImplementationOptions" data-name="lsp::implementationoptions">
+      <a href="../LSP/ImplementationOptions.html">ImplementationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ImplementationRegistrationOptions" data-name="lsp::implementationregistrationoptions">
+      <a href="../LSP/ImplementationRegistrationOptions.html">ImplementationRegistrationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/InitializedNotification" data-name="lsp::initializednotification">
+      <a href="../LSP/InitializedNotification.html">InitializedNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/InitializeParams" data-name="lsp::initializeparams">
+      <a href="../LSP/InitializeParams.html">InitializeParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Initializer" data-name="lsp::initializer">
+      <a href="../LSP/Initializer.html">Initializer</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/InitializeRequest" data-name="lsp::initializerequest">
+      <a href="../LSP/InitializeRequest.html">InitializeRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/InitializeResult" data-name="lsp::initializeresult">
+      <a href="../LSP/InitializeResult.html">InitializeResult</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/InsertTextFormat" data-name="lsp::inserttextformat">
+      <a href="../LSP/InsertTextFormat.html">InsertTextFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Location" data-name="lsp::location">
+      <a href="../LSP/Location.html">Location</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/LocationLink" data-name="lsp::locationlink">
+      <a href="../LSP/LocationLink.html">LocationLink</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/LogBackend" data-name="lsp::logbackend">
+      <a href="../LSP/LogBackend.html">LogBackend</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/LogMessageNotification" data-name="lsp::logmessagenotification">
+      <a href="../LSP/LogMessageNotification.html">LogMessageNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/LogMessageParams" data-name="lsp::logmessageparams">
+      <a href="../LSP/LogMessageParams.html">LogMessageParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/MarkedString" data-name="lsp::markedstring">
+      <a href="../LSP/MarkedString.html">MarkedString</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/MarkupContent" data-name="lsp::markupcontent">
+      <a href="../LSP/MarkupContent.html">MarkupContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/MarkupKind" data-name="lsp::markupkind">
+      <a href="../LSP/MarkupKind.html">MarkupKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Message" data-name="lsp::message">
+      <a href="../LSP/Message.html">Message</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/MessageActionItem" data-name="lsp::messageactionitem">
+      <a href="../LSP/MessageActionItem.html">MessageActionItem</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/MessageType" data-name="lsp::messagetype">
+      <a href="../LSP/MessageType.html">MessageType</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/NotificationMessage" data-name="lsp::notificationmessage">
+      <a href="../LSP/NotificationMessage.html">NotificationMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ParameterInformation" data-name="lsp::parameterinformation">
+      <a href="../LSP/ParameterInformation.html">ParameterInformation</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/PartialResultParams" data-name="lsp::partialresultparams">
+      <a href="../LSP/PartialResultParams.html">PartialResultParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Position" data-name="lsp::position">
+      <a href="../LSP/Position.html">Position</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ProgressNotification" data-name="lsp::progressnotification">
+      <a href="../LSP/ProgressNotification.html">ProgressNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ProgressParams" data-name="lsp::progressparams">
+      <a href="../LSP/ProgressParams.html">ProgressParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ProgressToken" data-name="lsp::progresstoken">
+      <a href="../LSP/ProgressToken.html">ProgressToken</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/PublishDiagnosticsNotification" data-name="lsp::publishdiagnosticsnotification">
+      <a href="../LSP/PublishDiagnosticsNotification.html">PublishDiagnosticsNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/PublishDiagnosticsParams" data-name="lsp::publishdiagnosticsparams">
+      <a href="../LSP/PublishDiagnosticsParams.html">PublishDiagnosticsParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Range" data-name="lsp::range">
+      <a href="../LSP/Range.html">Range</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ReferenceOptions" data-name="lsp::referenceoptions">
+      <a href="../LSP/ReferenceOptions.html">ReferenceOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/RenameFile" data-name="lsp::renamefile">
+      <a href="../LSP/RenameFile.html">RenameFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/RenameFileOptions" data-name="lsp::renamefileoptions">
+      <a href="../LSP/RenameFileOptions.html">RenameFileOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/RenameOptions" data-name="lsp::renameoptions">
+      <a href="../LSP/RenameOptions.html">RenameOptions</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/RequestMessage" data-name="lsp::requestmessage(result)">
+      <a href="../LSP/RequestMessage.html">RequestMessage</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/RequestMessage/RequestId" data-name="lsp::requestmessage::requestid">
+      <a href="../LSP/RequestMessage/RequestId.html">RequestId</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ResourceOperationKind" data-name="lsp::resourceoperationkind">
+      <a href="../LSP/ResourceOperationKind.html">ResourceOperationKind</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/ResponseError" data-name="lsp::responseerror">
+      <a href="../LSP/ResponseError.html">ResponseError</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/ResponseError/DataType" data-name="lsp::responseerror::datatype">
+      <a href="../LSP/ResponseError/DataType.html">DataType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ResponseMessage" data-name="lsp::responsemessage(result)">
+      <a href="../LSP/ResponseMessage.html">ResponseMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SelectionRangeOptions" data-name="lsp::selectionrangeoptions">
+      <a href="../LSP/SelectionRangeOptions.html">SelectionRangeOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SelectionRangeRegistrationOptions" data-name="lsp::selectionrangeregistrationoptions">
+      <a href="../LSP/SelectionRangeRegistrationOptions.html">SelectionRangeRegistrationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/Server" data-name="lsp::server">
+      <a href="../LSP/Server.html">Server</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ServerCapabilities" data-name="lsp::servercapabilities">
+      <a href="../LSP/ServerCapabilities.html">ServerCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ShowMessageNotification" data-name="lsp::showmessagenotification">
+      <a href="../LSP/ShowMessageNotification.html">ShowMessageNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ShowMessageParams" data-name="lsp::showmessageparams">
+      <a href="../LSP/ShowMessageParams.html">ShowMessageParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ShowMessageRequest" data-name="lsp::showmessagerequest">
+      <a href="../LSP/ShowMessageRequest.html">ShowMessageRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ShowMessageRequestParams" data-name="lsp::showmessagerequestparams">
+      <a href="../LSP/ShowMessageRequestParams.html">ShowMessageRequestParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/ShutdownRequest" data-name="lsp::shutdownrequest">
+      <a href="../LSP/ShutdownRequest.html">ShutdownRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SignatureHelp" data-name="lsp::signaturehelp">
+      <a href="../LSP/SignatureHelp.html">SignatureHelp</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SignatureHelpContext" data-name="lsp::signaturehelpcontext">
+      <a href="../LSP/SignatureHelpContext.html">SignatureHelpContext</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SignatureHelpOptions" data-name="lsp::signaturehelpoptions">
+      <a href="../LSP/SignatureHelpOptions.html">SignatureHelpOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SignatureHelpParams" data-name="lsp::signaturehelpparams">
+      <a href="../LSP/SignatureHelpParams.html">SignatureHelpParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SignatureHelpRequest" data-name="lsp::signaturehelprequest">
+      <a href="../LSP/SignatureHelpRequest.html">SignatureHelpRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SignatureHelpTriggerKind" data-name="lsp::signaturehelptriggerkind">
+      <a href="../LSP/SignatureHelpTriggerKind.html">SignatureHelpTriggerKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SignatureInformation" data-name="lsp::signatureinformation">
+      <a href="../LSP/SignatureInformation.html">SignatureInformation</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/StaticRegistrationOptions" data-name="lsp::staticregistrationoptions">
+      <a href="../LSP/StaticRegistrationOptions.html">StaticRegistrationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/StringEnumConverter" data-name="lsp::stringenumconverter(t)">
+      <a href="../LSP/StringEnumConverter.html">StringEnumConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SymbolInformation" data-name="lsp::symbolinformation">
+      <a href="../LSP/SymbolInformation.html">SymbolInformation</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/SymbolKind" data-name="lsp::symbolkind">
+      <a href="../LSP/SymbolKind.html">SymbolKind</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities" data-name="lsp::textdocumentclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities.html">TextDocumentClientCapabilities</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities/CodeActionClientCapabilities" data-name="lsp::textdocumentclientcapabilities::codeactionclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/CodeActionClientCapabilities.html">CodeActionClientCapabilities</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities/CodeActionClientCapabilities/CodeActionLiteralSupportValue" data-name="lsp::textdocumentclientcapabilities::codeactionclientcapabilities::codeactionliteralsupportvalue">
+      <a href="../LSP/TextDocumentClientCapabilities/CodeActionClientCapabilities/CodeActionLiteralSupportValue.html">CodeActionLiteralSupportValue</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/CodeActionClientCapabilities/CodeActionLiteralSupportValue/CodeActionKindValue" data-name="lsp::textdocumentclientcapabilities::codeactionclientcapabilities::codeactionliteralsupportvalue::codeactionkindvalue">
+      <a href="../LSP/TextDocumentClientCapabilities/CodeActionClientCapabilities/CodeActionLiteralSupportValue/CodeActionKindValue.html">CodeActionKindValue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/CodeLensClientCapabilities" data-name="lsp::textdocumentclientcapabilities::codelensclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/CodeLensClientCapabilities.html">CodeLensClientCapabilities</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities/CompletionClientCapabilities" data-name="lsp::textdocumentclientcapabilities::completionclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/CompletionClientCapabilities.html">CompletionClientCapabilities</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities/CompletionClientCapabilities/CompletionItem" data-name="lsp::textdocumentclientcapabilities::completionclientcapabilities::completionitem">
+      <a href="../LSP/TextDocumentClientCapabilities/CompletionClientCapabilities/CompletionItem.html">CompletionItem</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/CompletionClientCapabilities/CompletionItem/TagSupport" data-name="lsp::textdocumentclientcapabilities::completionclientcapabilities::completionitem::tagsupport">
+      <a href="../LSP/TextDocumentClientCapabilities/CompletionClientCapabilities/CompletionItem/TagSupport.html">TagSupport</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/CompletionClientCapabilities/CompletionItemKindValue" data-name="lsp::textdocumentclientcapabilities::completionclientcapabilities::completionitemkindvalue">
+      <a href="../LSP/TextDocumentClientCapabilities/CompletionClientCapabilities/CompletionItemKindValue.html">CompletionItemKindValue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DeclarationClientCapabilities" data-name="lsp::textdocumentclientcapabilities::declarationclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DeclarationClientCapabilities.html">DeclarationClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DefinitionClientCapabilities" data-name="lsp::textdocumentclientcapabilities::definitionclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DefinitionClientCapabilities.html">DefinitionClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DocumentColorClientCapabilities" data-name="lsp::textdocumentclientcapabilities::documentcolorclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DocumentColorClientCapabilities.html">DocumentColorClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DocumentFormattingClientCapabilities" data-name="lsp::textdocumentclientcapabilities::documentformattingclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DocumentFormattingClientCapabilities.html">DocumentFormattingClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DocumentHighlightClientCapabilities" data-name="lsp::textdocumentclientcapabilities::documenthighlightclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DocumentHighlightClientCapabilities.html">DocumentHighlightClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DocumentLinkClientCapabilities" data-name="lsp::textdocumentclientcapabilities::documentlinkclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DocumentLinkClientCapabilities.html">DocumentLinkClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DocumentOnTypeFormattingClientCapabilities" data-name="lsp::textdocumentclientcapabilities::documentontypeformattingclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DocumentOnTypeFormattingClientCapabilities.html">DocumentOnTypeFormattingClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DocumentRangeFormattingClientCapabilities" data-name="lsp::textdocumentclientcapabilities::documentrangeformattingclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DocumentRangeFormattingClientCapabilities.html">DocumentRangeFormattingClientCapabilities</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities/DocumentSymbolClientCapabilities" data-name="lsp::textdocumentclientcapabilities::documentsymbolclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/DocumentSymbolClientCapabilities.html">DocumentSymbolClientCapabilities</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/DocumentSymbolClientCapabilities/SymbolKindValue" data-name="lsp::textdocumentclientcapabilities::documentsymbolclientcapabilities::symbolkindvalue">
+      <a href="../LSP/TextDocumentClientCapabilities/DocumentSymbolClientCapabilities/SymbolKindValue.html">SymbolKindValue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/FoldingRangeClientCapabilities" data-name="lsp::textdocumentclientcapabilities::foldingrangeclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/FoldingRangeClientCapabilities.html">FoldingRangeClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/HoverClientCapabilities" data-name="lsp::textdocumentclientcapabilities::hoverclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/HoverClientCapabilities.html">HoverClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/ImplementationClientCapabilities" data-name="lsp::textdocumentclientcapabilities::implementationclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/ImplementationClientCapabilities.html">ImplementationClientCapabilities</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities/PublishDiagnosticsClientCapabilities" data-name="lsp::textdocumentclientcapabilities::publishdiagnosticsclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/PublishDiagnosticsClientCapabilities.html">PublishDiagnosticsClientCapabilities</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/PublishDiagnosticsClientCapabilities/TagSupportValue" data-name="lsp::textdocumentclientcapabilities::publishdiagnosticsclientcapabilities::tagsupportvalue">
+      <a href="../LSP/TextDocumentClientCapabilities/PublishDiagnosticsClientCapabilities/TagSupportValue.html">TagSupportValue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/ReferenceClientCapabilities" data-name="lsp::textdocumentclientcapabilities::referenceclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/ReferenceClientCapabilities.html">ReferenceClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/RenameClientCapabilities" data-name="lsp::textdocumentclientcapabilities::renameclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/RenameClientCapabilities.html">RenameClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/SelectionRangeClientCapabilities" data-name="lsp::textdocumentclientcapabilities::selectionrangeclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/SelectionRangeClientCapabilities.html">SelectionRangeClientCapabilities</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities/SignatureHelpClientCapabilities" data-name="lsp::textdocumentclientcapabilities::signaturehelpclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/SignatureHelpClientCapabilities.html">SignatureHelpClientCapabilities</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="lsp/LSP/TextDocumentClientCapabilities/SignatureHelpClientCapabilities/SignatureInformationValue" data-name="lsp::textdocumentclientcapabilities::signaturehelpclientcapabilities::signatureinformationvalue">
+      <a href="../LSP/TextDocumentClientCapabilities/SignatureHelpClientCapabilities/SignatureInformationValue.html">SignatureInformationValue</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/SignatureHelpClientCapabilities/SignatureInformationValue/ParameterInformationValue" data-name="lsp::textdocumentclientcapabilities::signaturehelpclientcapabilities::signatureinformationvalue::parameterinformationvalue">
+      <a href="../LSP/TextDocumentClientCapabilities/SignatureHelpClientCapabilities/SignatureInformationValue/ParameterInformationValue.html">ParameterInformationValue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/TextDocumentSyncClientCapabilities" data-name="lsp::textdocumentclientcapabilities::textdocumentsyncclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/TextDocumentSyncClientCapabilities.html">TextDocumentSyncClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentClientCapabilities/TypeDefinitionClientCapabilities" data-name="lsp::textdocumentclientcapabilities::typedefinitionclientcapabilities">
+      <a href="../LSP/TextDocumentClientCapabilities/TypeDefinitionClientCapabilities.html">TypeDefinitionClientCapabilities</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentEdit" data-name="lsp::textdocumentedit">
+      <a href="../LSP/TextDocumentEdit.html">TextDocumentEdit</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentIdentifier" data-name="lsp::textdocumentidentifier">
+      <a href="../LSP/TextDocumentIdentifier.html">TextDocumentIdentifier</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentItem" data-name="lsp::textdocumentitem">
+      <a href="../LSP/TextDocumentItem.html">TextDocumentItem</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentPositionParams" data-name="lsp::textdocumentpositionparams">
+      <a href="../LSP/TextDocumentPositionParams.html">TextDocumentPositionParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentRegistrationOptions" data-name="lsp::textdocumentregistrationoptions">
+      <a href="../LSP/TextDocumentRegistrationOptions.html">TextDocumentRegistrationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentSaveReason" data-name="lsp::textdocumentsavereason">
+      <a href="../LSP/TextDocumentSaveReason.html">TextDocumentSaveReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentSyncKind" data-name="lsp::textdocumentsynckind">
+      <a href="../LSP/TextDocumentSyncKind.html">TextDocumentSyncKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextDocumentSyncOptions" data-name="lsp::textdocumentsyncoptions">
+      <a href="../LSP/TextDocumentSyncOptions.html">TextDocumentSyncOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TextEdit" data-name="lsp::textedit">
+      <a href="../LSP/TextEdit.html">TextEdit</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TypeDefinitionOptions" data-name="lsp::typedefinitionoptions">
+      <a href="../LSP/TypeDefinitionOptions.html">TypeDefinitionOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/TypeDefinitionRegistrationOptions" data-name="lsp::typedefinitionregistrationoptions">
+      <a href="../LSP/TypeDefinitionRegistrationOptions.html">TypeDefinitionRegistrationOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/UnknownNotification" data-name="lsp::unknownnotification">
+      <a href="../LSP/UnknownNotification.html">UnknownNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/UnknownRequest" data-name="lsp::unknownrequest">
+      <a href="../LSP/UnknownRequest.html">UnknownRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/VersionedTextDocumentIdentifier" data-name="lsp::versionedtextdocumentidentifier">
+      <a href="../LSP/VersionedTextDocumentIdentifier.html">VersionedTextDocumentIdentifier</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WillSaveNotification" data-name="lsp::willsavenotification">
+      <a href="../LSP/WillSaveNotification.html">WillSaveNotification</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WillSaveTextDocumentParams" data-name="lsp::willsavetextdocumentparams">
+      <a href="../LSP/WillSaveTextDocumentParams.html">WillSaveTextDocumentParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WillSaveWaitUntilRequest" data-name="lsp::willsavewaituntilrequest">
+      <a href="../LSP/WillSaveWaitUntilRequest.html">WillSaveWaitUntilRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkDoneProgressBegin" data-name="lsp::workdoneprogressbegin">
+      <a href="../LSP/WorkDoneProgressBegin.html">WorkDoneProgressBegin</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkDoneProgressCreateParams" data-name="lsp::workdoneprogresscreateparams">
+      <a href="../LSP/WorkDoneProgressCreateParams.html">WorkDoneProgressCreateParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkDoneProgressCreateRequest" data-name="lsp::workdoneprogresscreaterequest">
+      <a href="../LSP/WorkDoneProgressCreateRequest.html">WorkDoneProgressCreateRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkDoneProgressEnd" data-name="lsp::workdoneprogressend">
+      <a href="../LSP/WorkDoneProgressEnd.html">WorkDoneProgressEnd</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkDoneProgressOptions" data-name="lsp::workdoneprogressoptions">
+      <a href="../LSP/WorkDoneProgressOptions.html">WorkDoneProgressOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkDoneProgressParams" data-name="lsp::workdoneprogressparams">
+      <a href="../LSP/WorkDoneProgressParams.html">WorkDoneProgressParams</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkDoneProgressReport" data-name="lsp::workdoneprogressreport">
+      <a href="../LSP/WorkDoneProgressReport.html">WorkDoneProgressReport</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkspaceEdit" data-name="lsp::workspaceedit">
+      <a href="../LSP/WorkspaceEdit.html">WorkspaceEdit</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkspaceEditClientCapabilities" data-name="lsp::workspaceeditclientcapabilities">
+      <a href="../LSP/WorkspaceEditClientCapabilities.html">WorkspaceEditClientCapabilities</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkspaceFolder" data-name="lsp::workspacefolder">
+      <a href="../LSP/WorkspaceFolder.html">WorkspaceFolder</a>
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkspaceFoldersServerCapabilities" data-name="lsp::workspacefoldersservercapabilities">
+      <a href="../LSP/WorkspaceFoldersServerCapabilities.html">WorkspaceFoldersServerCapabilities</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lsp/LSP/WorkspaceSymbolClientCapabilities" data-name="lsp::workspacesymbolclientcapabilities">
+      <a href="../LSP/WorkspaceSymbolClientCapabilities.html">WorkspaceSymbolClientCapabilities</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lsp/LSP/WorkspaceSymbolClientCapabilities/SymbolKindValue" data-name="lsp::workspacesymbolclientcapabilities::symbolkindvalue">
+      <a href="../LSP/WorkspaceSymbolClientCapabilities/SymbolKindValue.html">SymbolKindValue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lsp/LSP/WorkspaceValue" data-name="lsp::workspacevalue">
+      <a href="../LSP/WorkspaceValue.html">WorkspaceValue</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> LSP::CompletionRequest
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LSP/CompletionRequest.html">LSP::CompletionRequest</a></li><li class="superclass"><a href="../LSP/RequestMessage.html">LSP::RequestMessage</a>(Array(<a href="../LSP/CompletionItem.html">LSP::CompletionItem</a>) | <a href="../LSP/CompletionList.html">LSP::CompletionList</a> | Nil)</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>The Completion request is sent from the client to the server to compute completion items at a given cursor position.</p>
+<p>Completion items are presented in the <a href="https://code.visualstudio.com/docs/editor/intellisense">IntelliSense</a>.</p>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../LSP/Initializer.html">LSP::Initializer</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      requests/language_features/completion.cr
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+          <div class="summary"><p>The Completion request is sent from the client to the server to compute completion items at a given cursor position.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Aargs%29-class-method" class="signature"><strong>.new</strong>(**args)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#params%3ACompletionParams-instance-method" class="signature"><strong>#params</strong> : CompletionParams</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#params%3D%28params%3ACompletionParams%29-instance-method" class="signature"><strong>#params=</strong>(params : CompletionParams)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../LSP/RequestMessage.html">LSP::RequestMessage</a>(Array(<a href="../LSP/CompletionItem.html">LSP::CompletionItem</a>) | <a href="../LSP/CompletionList.html">LSP::CompletionList</a> | Nil)</code></h3>
+  
+  
+    <a href="../LSP/RequestMessage.html#id%3ARequestId-instance-method" class="tooltip">
+      <span>id : RequestId</span>
+    id</a>, 
+    
+  
+    <a href="../LSP/RequestMessage.html#id%3D%28id%3ARequestId%29-instance-method" class="tooltip">
+      <span>id=(id : RequestId)</span>
+    id=</a>, 
+    
+  
+    <a href="../LSP/RequestMessage.html#method%3AString-instance-method" class="tooltip">
+      <span>method : String</span>
+    method</a>, 
+    
+  
+    <a href="../LSP/RequestMessage.html#method%3D%28method%3AString%29-instance-method" class="tooltip">
+      <span>method=(method : String)</span>
+    method=</a>, 
+    
+  
+    <a href="../LSP/RequestMessage.html#on_response%28raw%3AJSON%3A%3AAny%3F%2Ce%3AResponseError%3F%29-instance-method" class="tooltip">
+      <span>on_response(raw : JSON::Any?, e : ResponseError?)<br/>on_response(&block : Proc(Result(LSP::CompletionItem) | Result | Result?, ResponseError?, Nil))</span>
+    on_response</a>, 
+    
+  
+    <a href="../LSP/RequestMessage.html#on_response%3F%3AProc%28Result%28LSP%3A%3ACompletionItem%29%7CResult%7CResult%3F%2CResponseError%3F%2CNil%29%3F-instance-method" class="tooltip">
+      <span>on_response? : Proc(Result(LSP::CompletionItem) | Result | Result?, ResponseError?, Nil)?</span>
+    on_response?</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../LSP/RequestMessage.html">LSP::RequestMessage</a>(Array(<a href="../LSP/CompletionItem.html">LSP::CompletionItem</a>) | <a href="../LSP/CompletionList.html">LSP::CompletionList</a> | Nil)</code></h3>
+  
+  
+    <a href="../LSP/RequestMessage.html#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="tooltip">
+      <span>new(pull : JSON::PullParser)<br/>new(**args)</span>
+    new</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The Completion request is sent from the client to the server to compute completion items at a given cursor position.</p>
+<p>Completion items are presented in the <a href="https://code.visualstudio.com/docs/editor/intellisense">IntelliSense</a>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(**args)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(**args)
+
+        <a class="method-permalink" href="#new%28%2A%2Aargs%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="params:CompletionParams-instance-method">
+      <div class="signature">
+        
+        def <strong>params</strong> : <a href="../LSP/CompletionParams.html">CompletionParams</a>
+
+        <a class="method-permalink" href="#params%3ACompletionParams-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="params=(params:CompletionParams)-instance-method">
+      <div class="signature">
+        
+        def <strong>params=</strong>(params : <a href="../LSP/CompletionParams.html">CompletionParams</a>)
+
+        <a class="method-permalink" href="#params%3D%28params%3ACompletionParams%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
