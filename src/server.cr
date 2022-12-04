@@ -113,7 +113,6 @@ class LSP::Server
     begin
       message = LSP::RequestMessage.from_json(content_str)
     rescue e
-      puts e
       begin
         message = LSP::ResponseMessage(JSON::Any?).from_json(content_str)
       rescue
