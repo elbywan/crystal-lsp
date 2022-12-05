@@ -1,3 +1,5 @@
+require "../ext/enum"
+
 module LSP
   Enum.number MessageType do
     # An error message.

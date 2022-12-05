@@ -1,3 +1,4 @@
+require "./ext/enum"
 require "./message"
 require "./requests/request_message"
 

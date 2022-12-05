@@ -1,4 +1,5 @@
 require "json"
+require "../ext/enum"
 require "../tools"
 require "./text_edit"
 require "./markup_content"

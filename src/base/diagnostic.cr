@@ -2,6 +2,7 @@ require "json"
 require "./range"
 require "./location"
 require "../tools"
+require "../ext/enum"
 
 module LSP
   Enum.number DiagnosticSeverity do

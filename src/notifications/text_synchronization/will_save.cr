@@ -1,5 +1,6 @@
 require "json"
 require "../../tools"
+require "../../ext/enum"
 require "../../base/*"
 require "../notification_message"
 

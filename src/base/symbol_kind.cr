@@ -1,3 +1,5 @@
+require "../ext/enum"
+
 module LSP
   Enum.number SymbolKind do
     File          =  1
