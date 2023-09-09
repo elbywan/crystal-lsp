@@ -15,6 +15,7 @@ module LSP
     RefactorInline:        "refactor.inline",
     RefactorRewrite:       "refactor.rewrite",
     SourceOrganizeImports: "source.organizeImports",
+    SourceFixAll:          "source.fixAll",
   } do
     # Empty kind.
     Empty
@@ -60,5 +61,7 @@ module LSP
     Source
     # Base kind for an organize imports source action: `source.organizeImports`.
     SourceOrganizeImports
+    # Base kind for a 'fix all' source action: `source.fixAll`.
+    SourceFixAll
   end
 end
