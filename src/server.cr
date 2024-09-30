@@ -78,9 +78,12 @@ class LSP::Server
 
   # Read a client message and deserialize it.
   protected def self.read(io : IO)
-    if io.responds_to? :blocking
-      io.blocking = false
-    end
+    {% unless flag?(:win32) %}
+      if io.responds_to? :blocking
+        io.blocking = false
+      end
+    {% end %}
+    
     content_length = uninitialized Int32
     content_type = "application/vscode-jsonrpc; charset=utf-8"
 
