@@ -78,7 +78,11 @@ class LSP::Server
 
   # Read a client message and deserialize it.
   protected def self.read(io : IO)
-    {% unless flag?(:win32) %}
+    {% if flag?(:win32) %}
+      if !io.same?(STDIN) && io.responds_to? :blocking
+        io.blocking = false
+      end
+    {% else %}
       if io.responds_to? :blocking
         io.blocking = false
       end
