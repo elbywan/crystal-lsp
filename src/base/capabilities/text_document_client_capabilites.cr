@@ -535,4 +535,30 @@ struct LSP::TextDocumentClientCapabilities
     @[JSON::Field(key: "dynamicRegistration")]
     property dynamic_registration : Bool?
   end
+
+  # Capabilities specific to the `textDocument/inlayHint` request.
+  @[JSON::Field(key: "inlayHint")]
+  property inlay_hint : InlayHintClientCapabilities?
+
+  struct InlayHintClientCapabilities
+    include Initializer
+    include JSON::Serializable
+
+    # Whether inlay hints support dynamic registration.
+    @[JSON::Field(key: "dynamicRegistration")]
+    property dynamic_registration : Bool?
+
+    struct ResolveSupport
+      include JSON::Serializable
+      include Initializer
+
+      # The properties that a client can resolve lazily.
+      property properties : Array(String)
+    end
+
+    # Indicates which properties a client can resolve lazily on an inlay
+    # hint.
+    @[JSON::Field(key: "resolveSupport")]
+    property resolve_support : ResolveSupport?
+  end
 end

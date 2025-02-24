@@ -40,6 +40,7 @@ module LSP
       "textDocument/definition":        DefinitionRequest,
       "textDocument/signatureHelp":     SignatureHelpRequest,
       "textDocument/documentSymbol":    DocumentSymbolsRequest,
+      "textDocument/inlayHint":         InlayHintRequest,
     }, default: UnknownRequest
   end
 
