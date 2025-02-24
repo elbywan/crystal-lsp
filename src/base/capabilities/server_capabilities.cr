@@ -102,6 +102,10 @@ module LSP
     @[JSON::Field(key: "selectionRangeProvider")]
     property selection_range_provider : (Bool | SelectionRangeOptions | SelectionRangeRegistrationOptions)?
 
+    # The server provides inlay hints.
+    @[JSON::Field(key: "inlayHintProvider")]
+    property inlay_hint_provider : (Bool | InlayHintOptions | InlayHintRegistrationOptions)?
+
     # The server provides workspace symbol support.
     @[JSON::Field(key: "workspaceSymbolProvider")]
     property workspace_symbol_provider : Bool?
@@ -381,6 +385,30 @@ module LSP
     include WorkDoneProgressOptions
     include TextDocumentRegistrationOptions
     include StaticRegistrationOptions
+  end
+
+  struct InlayHintOptions
+    include Initializer
+    include JSON::Serializable
+    include WorkDoneProgressOptions
+
+    # The server provides support to resolve additional
+    # information for an inlay hint item.
+    @[JSON::Field(key: "resolveProvider")]
+    property resolve_provider : Bool?
+  end
+
+  struct InlayHintRegistrationOptions
+    include Initializer
+    include JSON::Serializable
+    include WorkDoneProgressOptions
+    include TextDocumentRegistrationOptions
+    include StaticRegistrationOptions
+
+    # The server provides support to resolve additional
+    # information for an inlay hint item.
+    @[JSON::Field(key: "resolveProvider")]
+    property resolve_provider : Bool?
   end
 
   struct WorkspaceValue
