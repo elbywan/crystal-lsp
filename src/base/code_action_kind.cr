@@ -9,6 +9,9 @@ module LSP
   #
   # The set of kinds is open and client needs to announce the kinds it supports to the server during
   # initialization.
+  # Unknown kinds (custom kinds, sub-kinds such as `refactor.extract.function`)
+  # are ignored rather than rejected: a client announcing them must not break
+  # the initialize handshake.
   Enum.string CodeActionKind, mappings: {
     Empty:                 "",
     RefactorExtract:       "refactor.extract",
@@ -16,7 +19,7 @@ module LSP
     RefactorRewrite:       "refactor.rewrite",
     SourceOrganizeImports: "source.organizeImports",
     SourceFixAll:          "source.fixAll",
-  } do
+  }, unknown: Empty do
     # Empty kind.
     Empty
     # Base kind for quickfix actions: 'quickfix'.

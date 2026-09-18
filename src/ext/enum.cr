@@ -1,7 +1,12 @@
 # :nodoc:
 struct Enum
   # An JSON fiendly string enum.
-  macro string(name, *, downcase = true, mappings = nil, &block)
+  #
+  # *unknown* names a member to fall back to when a string matches nothing:
+  # several protocol enums are open sets (`CodeActionKind` kinds are invented
+  # by clients), and raising while deserializing a message aborts the session
+  # instead of ignoring the value.
+  macro string(name, *, downcase = true, mappings = nil, unknown = nil, &block)
     enum {{ name.id }}
       {{ block.body }}
 
@@ -11,7 +16,11 @@ struct Enum
 	          return self.new({{ key }}) if string == {{ value }}
           {% end %}
         {% end %}
-        super
+        {% if unknown %}
+          parse?(string) || {{ unknown.id }}
+        {% else %}
+          super
+        {% end %}
       end
 
       def self.new(pull : JSON::PullParser) : self
@@ -21,7 +30,11 @@ struct Enum
       def self.from_json(pull : JSON::PullParser) : self
         case pull.kind
         when .int?
-          from_value(pull.read_int)
+          {% if unknown %}
+            from_value?(pull.read_int) || {{ unknown.id }}
+          {% else %}
+            from_value(pull.read_int)
+          {% end %}
         when .string?
           parse(pull.read_string)
         else
