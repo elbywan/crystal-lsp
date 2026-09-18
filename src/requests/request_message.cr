@@ -28,18 +28,25 @@ module LSP
     end
 
     json_discriminator "method", {
-      initialize:                       InitializeRequest,
-      shutdown:                         ShutdownRequest,
-      "window/showMessageRequest":      ShowMessageRequest,
-      "window/workDoneProgress/create": WorkDoneProgressCreateRequest,
-      "textDocument/willSaveWaitUntil": WillSaveWaitUntilRequest,
-      "textDocument/completion":        CompletionRequest,
-      "textDocument/formatting":        DocumentFormattingRequest,
-      "textDocument/rangeFormatting":   DocumentRangeFormattingRequest,
-      "textDocument/hover":             HoverRequest,
-      "textDocument/definition":        DefinitionRequest,
-      "textDocument/signatureHelp":     SignatureHelpRequest,
-      "textDocument/documentSymbol":    DocumentSymbolsRequest,
+      initialize:                         InitializeRequest,
+      shutdown:                           ShutdownRequest,
+      "window/showMessageRequest":        ShowMessageRequest,
+      "window/workDoneProgress/create":   WorkDoneProgressCreateRequest,
+      "textDocument/willSaveWaitUntil":   WillSaveWaitUntilRequest,
+      "textDocument/completion":          CompletionRequest,
+      "textDocument/formatting":          DocumentFormattingRequest,
+      "textDocument/rangeFormatting":     DocumentRangeFormattingRequest,
+      "textDocument/hover":               HoverRequest,
+      "textDocument/definition":          DefinitionRequest,
+      "textDocument/signatureHelp":       SignatureHelpRequest,
+      "textDocument/documentSymbol":      DocumentSymbolsRequest,
+      "textDocument/semanticTokens/full": SemanticTokensRequest,
+      "textDocument/foldingRange":        FoldingRangeRequest,
+      "textDocument/selectionRange":      SelectionRangeRequest,
+      "textDocument/documentHighlight":   DocumentHighlightRequest,
+      "textDocument/prepareRename":       PrepareRenameRequest,
+      "textDocument/rename":              RenameRequest,
+      "workspace/symbol":                 WorkspaceSymbolRequest,
     }, default: UnknownRequest
   end
 
