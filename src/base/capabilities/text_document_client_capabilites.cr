@@ -496,6 +496,72 @@ struct LSP::TextDocumentClientCapabilities
     property version_support : Bool?
   end
 
+  # Capabilities specific to the `textDocument/semanticTokens` requests.
+  @[JSON::Field(key: "semanticTokens")]
+  property semantic_tokens : SemanticTokensClientCapabilities?
+
+  struct SemanticTokensClientCapabilities
+    include Initializer
+    include JSON::Serializable
+
+    # Whether implementation supports dynamic registration.
+    @[JSON::Field(key: "dynamicRegistration")]
+    property dynamic_registration : Bool?
+
+    # Which requests the client supports, and how.
+    property requests : Requests?
+
+    # The token types the client understands.
+    @[JSON::Field(key: "tokenTypes")]
+    property token_types : Array(String)?
+
+    # The token modifiers the client understands.
+    @[JSON::Field(key: "tokenModifiers")]
+    property token_modifiers : Array(String)?
+
+    # The formats the client supports (`relative`).
+    property formats : Array(String)?
+
+    # Whether the client supports tokens that can overlap each other.
+    @[JSON::Field(key: "overlappingTokenSupport")]
+    property overlapping_token_support : Bool?
+
+    # Whether the client supports tokens that can span multiple lines.
+    @[JSON::Field(key: "multilineTokenSupport")]
+    property multiline_token_support : Bool?
+
+    # Whether the client allows the server to cancel a request.
+    @[JSON::Field(key: "serverCancelSupport")]
+    property server_cancel_support : Bool?
+
+    # Whether the client uses semantic tokens to augment its syntax based
+    # highlighting instead of replacing it.
+    @[JSON::Field(key: "augmentsSyntaxTokens")]
+    property augments_syntax_tokens : Bool?
+
+    struct Requests
+      include Initializer
+      include JSON::Serializable
+
+      property range : (Bool | RangeOptions)?
+
+      property full : (Bool | FullOptions)?
+
+      struct RangeOptions
+        include Initializer
+        include JSON::Serializable
+      end
+
+      struct FullOptions
+        include Initializer
+        include JSON::Serializable
+
+        # Whether the client supports the delta protocol.
+        property delta : Bool?
+      end
+    end
+  end
+
   # Capabilities specific to the `textDocument/foldingRange` request.
   @[JSON::Field(key: "foldingRange")]
   property folding_range : FoldingRangeClientCapabilities?

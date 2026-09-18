@@ -106,6 +106,10 @@ module LSP
     @[JSON::Field(key: "workspaceSymbolProvider")]
     property workspace_symbol_provider : Bool?
 
+    # The server provides semantic tokens support.
+    @[JSON::Field(key: "semanticTokensProvider")]
+    property semantic_tokens_provider : SemanticTokensOptions?
+
     # Workspace specific server capabilities
     @[JSON::Field(key: "workspace")]
     property workspace : WorkspaceValue?
@@ -381,6 +385,52 @@ module LSP
     include WorkDoneProgressOptions
     include TextDocumentRegistrationOptions
     include StaticRegistrationOptions
+  end
+
+  struct SemanticTokensOptions
+    include Initializer
+    include JSON::Serializable
+    include WorkDoneProgressOptions
+
+    # The legend describing the tokens the server emits.
+    property legend : SemanticTokensLegend
+
+    # Whether the server supports range requests. The object form
+    # (`{ }`) is not modelled.
+    property range : Bool?
+
+    # Whether the server supports full document requests. The object form
+    # (`{ delta: true }`) is not modelled.
+    property full : Bool?
+  end
+
+  struct SemanticTokensRegistrationOptions
+    include Initializer
+    include JSON::Serializable
+    include WorkDoneProgressOptions
+    include TextDocumentRegistrationOptions
+    include StaticRegistrationOptions
+
+    property legend : SemanticTokensLegend
+
+    property range : Bool?
+
+    property full : Bool?
+  end
+
+  # The token types and modifiers a server emits, in index order.
+  struct SemanticTokensLegend
+    include Initializer
+    include JSON::Serializable
+
+    # The token types of the legend, standard names (`class`, `method`, ...)
+    # or server specific ones.
+    @[JSON::Field(key: "tokenTypes")]
+    property token_types : Array(String)
+
+    # The token modifiers of the legend.
+    @[JSON::Field(key: "tokenModifiers")]
+    property token_modifiers : Array(String)
   end
 
   struct WorkspaceValue
